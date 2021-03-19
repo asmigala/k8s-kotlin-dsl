@@ -16,7 +16,7 @@ object CRDGenerator {
         outputPackageFolder,
         outputPackage,
         crd.spec.names.kind,
-        crd.spec.validation.openAPIV3Schema
+        crd.spec.versions[2].schema.openAPIV3Schema
     )
   }
 

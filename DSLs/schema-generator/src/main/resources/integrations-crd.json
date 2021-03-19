@@ -1,0 +1,813 @@
+{
+    "apiVersion": "apiextensions.k8s.io/v1",
+    "kind": "CustomResourceDefinition",
+    "metadata": {
+        "annotations": {
+            "controller-gen.kubebuilder.io/version": "v0.0.0-20200528125929-5c0c6ae3b64b"
+        },
+        "creationTimestamp": "2021-03-02T13:55:42Z",
+        "generation": 1,
+        "labels": {
+            "app": "camel-k",
+            "operators.coreos.com/red-hat-camel-k.camel-knative": ""
+        },
+        "managedFields": [
+            {
+                "apiVersion": "apiextensions.k8s.io/v1beta1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:annotations": {
+                            ".": {},
+                            "f:controller-gen.kubebuilder.io/version": {}
+                        },
+                        "f:labels": {
+                            ".": {},
+                            "f:app": {}
+                        }
+                    },
+                    "f:spec": {
+                        "f:additionalPrinterColumns": {},
+                        "f:conversion": {
+                            ".": {},
+                            "f:strategy": {}
+                        },
+                        "f:group": {},
+                        "f:names": {
+                            "f:categories": {},
+                            "f:kind": {},
+                            "f:listKind": {},
+                            "f:plural": {},
+                            "f:shortNames": {},
+                            "f:singular": {}
+                        },
+                        "f:preserveUnknownFields": {},
+                        "f:scope": {},
+                        "f:subresources": {
+                            ".": {},
+                            "f:scale": {
+                                ".": {},
+                                "f:labelSelectorPath": {},
+                                "f:specReplicasPath": {},
+                                "f:statusReplicasPath": {}
+                            },
+                            "f:status": {}
+                        },
+                        "f:validation": {
+                            ".": {},
+                            "f:openAPIV3Schema": {
+                                ".": {},
+                                "f:description": {},
+                                "f:properties": {
+                                    ".": {},
+                                    "f:apiVersion": {
+                                        ".": {},
+                                        "f:description": {},
+                                        "f:type": {}
+                                    },
+                                    "f:kind": {
+                                        ".": {},
+                                        "f:description": {},
+                                        "f:type": {}
+                                    },
+                                    "f:metadata": {
+                                        ".": {},
+                                        "f:type": {}
+                                    },
+                                    "f:spec": {
+                                        ".": {},
+                                        "f:description": {},
+                                        "f:properties": {
+                                            ".": {},
+                                            "f:configuration": {
+                                                ".": {},
+                                                "f:items": {},
+                                                "f:type": {}
+                                            },
+                                            "f:dependencies": {
+                                                ".": {},
+                                                "f:items": {},
+                                                "f:type": {}
+                                            },
+                                            "f:flows": {
+                                                ".": {},
+                                                "f:items": {},
+                                                "f:type": {}
+                                            },
+                                            "f:kit": {
+                                                ".": {},
+                                                "f:type": {}
+                                            },
+                                            "f:profile": {
+                                                ".": {},
+                                                "f:description": {},
+                                                "f:type": {}
+                                            },
+                                            "f:replicas": {
+                                                ".": {},
+                                                "f:format": {},
+                                                "f:type": {}
+                                            },
+                                            "f:repositories": {
+                                                ".": {},
+                                                "f:items": {},
+                                                "f:type": {}
+                                            },
+                                            "f:resources": {
+                                                ".": {},
+                                                "f:items": {},
+                                                "f:type": {}
+                                            },
+                                            "f:serviceAccountName": {
+                                                ".": {},
+                                                "f:type": {}
+                                            },
+                                            "f:sources": {
+                                                ".": {},
+                                                "f:items": {},
+                                                "f:type": {}
+                                            },
+                                            "f:traits": {
+                                                ".": {},
+                                                "f:additionalProperties": {},
+                                                "f:type": {}
+                                            }
+                                        },
+                                        "f:type": {}
+                                    },
+                                    "f:status": {
+                                        ".": {},
+                                        "f:description": {},
+                                        "f:properties": {
+                                            ".": {},
+                                            "f:capabilities": {
+                                                ".": {},
+                                                "f:items": {},
+                                                "f:type": {}
+                                            },
+                                            "f:conditions": {
+                                                ".": {},
+                                                "f:items": {},
+                                                "f:type": {}
+                                            },
+                                            "f:configuration": {
+                                                ".": {},
+                                                "f:items": {},
+                                                "f:type": {}
+                                            },
+                                            "f:dependencies": {
+                                                ".": {},
+                                                "f:items": {},
+                                                "f:type": {}
+                                            },
+                                            "f:digest": {
+                                                ".": {},
+                                                "f:type": {}
+                                            },
+                                            "f:failure": {
+                                                ".": {},
+                                                "f:description": {},
+                                                "f:properties": {
+                                                    ".": {},
+                                                    "f:reason": {
+                                                        ".": {},
+                                                        "f:type": {}
+                                                    },
+                                                    "f:recovery": {
+                                                        ".": {},
+                                                        "f:description": {},
+                                                        "f:properties": {
+                                                            ".": {},
+                                                            "f:attempt": {
+                                                                ".": {},
+                                                                "f:type": {}
+                                                            },
+                                                            "f:attemptMax": {
+                                                                ".": {},
+                                                                "f:type": {}
+                                                            },
+                                                            "f:attemptTime": {
+                                                                ".": {},
+                                                                "f:format": {},
+                                                                "f:type": {}
+                                                            }
+                                                        },
+                                                        "f:required": {},
+                                                        "f:type": {}
+                                                    },
+                                                    "f:time": {
+                                                        ".": {},
+                                                        "f:format": {},
+                                                        "f:type": {}
+                                                    }
+                                                },
+                                                "f:required": {},
+                                                "f:type": {}
+                                            },
+                                            "f:generatedResources": {
+                                                ".": {},
+                                                "f:items": {},
+                                                "f:type": {}
+                                            },
+                                            "f:generatedSources": {
+                                                ".": {},
+                                                "f:items": {},
+                                                "f:type": {}
+                                            },
+                                            "f:image": {
+                                                ".": {},
+                                                "f:type": {}
+                                            },
+                                            "f:kit": {
+                                                ".": {},
+                                                "f:type": {}
+                                            },
+                                            "f:phase": {
+                                                ".": {},
+                                                "f:description": {},
+                                                "f:type": {}
+                                            },
+                                            "f:platform": {
+                                                ".": {},
+                                                "f:type": {}
+                                            },
+                                            "f:profile": {
+                                                ".": {},
+                                                "f:description": {},
+                                                "f:type": {}
+                                            },
+                                            "f:replicas": {
+                                                ".": {},
+                                                "f:format": {},
+                                                "f:type": {}
+                                            },
+                                            "f:runtimeProvider": {
+                                                ".": {},
+                                                "f:description": {},
+                                                "f:type": {}
+                                            },
+                                            "f:runtimeVersion": {
+                                                ".": {},
+                                                "f:type": {}
+                                            },
+                                            "f:selector": {
+                                                ".": {},
+                                                "f:type": {}
+                                            },
+                                            "f:version": {
+                                                ".": {},
+                                                "f:type": {}
+                                            }
+                                        },
+                                        "f:type": {}
+                                    }
+                                },
+                                "f:type": {}
+                            }
+                        },
+                        "f:version": {},
+                        "f:versions": {}
+                    },
+                    "f:status": {
+                        "f:storedVersions": {}
+                    }
+                },
+                "manager": "catalog",
+                "operation": "Update",
+                "time": "2021-03-02T13:55:42Z"
+            },
+            {
+                "apiVersion": "apiextensions.k8s.io/v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:metadata": {
+                        "f:labels": {
+                            "f:operators.coreos.com/red-hat-camel-k.camel-knative": {}
+                        }
+                    }
+                },
+                "manager": "olm",
+                "operation": "Update",
+                "time": "2021-03-02T13:55:43Z"
+            },
+            {
+                "apiVersion": "apiextensions.k8s.io/v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:status": {
+                        "f:acceptedNames": {
+                            "f:categories": {},
+                            "f:kind": {},
+                            "f:listKind": {},
+                            "f:plural": {},
+                            "f:shortNames": {},
+                            "f:singular": {}
+                        },
+                        "f:conditions": {}
+                    }
+                },
+                "manager": "kube-apiserver",
+                "operation": "Update",
+                "time": "2021-03-02T13:55:44Z"
+            }
+        ],
+        "name": "integrations.camel.apache.org",
+        "resourceVersion": "6035014",
+        "selfLink": "/apis/apiextensions.k8s.io/v1/customresourcedefinitions/integrations.camel.apache.org",
+        "uid": "80526729-ee7b-46ac-a917-88740f8a1f0a"
+    },
+    "spec": {
+        "conversion": {
+            "strategy": "None"
+        },
+        "group": "camel.apache.org",
+        "names": {
+            "categories": [
+                "kamel",
+                "camel"
+            ],
+            "kind": "Integration",
+            "listKind": "IntegrationList",
+            "plural": "integrations",
+            "shortNames": [
+                "it"
+            ],
+            "singular": "integration"
+        },
+        "preserveUnknownFields": true,
+        "scope": "Namespaced",
+        "versions": [
+            {
+                "additionalPrinterColumns": [
+                    {
+                        "description": "The integration phase",
+                        "jsonPath": ".status.phase",
+                        "name": "Phase",
+                        "type": "string"
+                    },
+                    {
+                        "description": "The integration kit",
+                        "jsonPath": ".status.kit",
+                        "name": "Kit",
+                        "type": "string"
+                    },
+                    {
+                        "description": "The number of pods",
+                        "jsonPath": ".status.replicas",
+                        "name": "Replicas",
+                        "type": "integer"
+                    }
+                ],
+                "name": "v1",
+                "schema": {
+                    "openAPIV3Schema": {
+                        "description": "Integration is the Schema for the integrations API",
+                        "properties": {
+                            "apiVersion": {
+                                "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources",
+                                "type": "string"
+                            },
+                            "kind": {
+                                "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+                                "type": "string"
+                            },
+                            "metadata": {
+                                "type": "object"
+                            },
+                            "spec": {
+                                "description": "IntegrationSpec defines the desired state of Integration",
+                                "properties": {
+                                    "configuration": {
+                                        "items": {
+                                            "description": "ConfigurationSpec --",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "value"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "dependencies": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "flows": {
+                                        "items": {
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "kit": {
+                                        "type": "string"
+                                    },
+                                    "profile": {
+                                        "description": "TraitProfile represents lists of traits that are enabled for the specific installation/integration",
+                                        "type": "string"
+                                    },
+                                    "replicas": {
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "repositories": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "resources": {
+                                        "items": {
+                                            "description": "ResourceSpec --",
+                                            "properties": {
+                                                "compression": {
+                                                    "type": "boolean"
+                                                },
+                                                "content": {
+                                                    "type": "string"
+                                                },
+                                                "contentKey": {
+                                                    "type": "string"
+                                                },
+                                                "contentRef": {
+                                                    "type": "string"
+                                                },
+                                                "mountPath": {
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "type": {
+                                                    "description": "ResourceType --",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "serviceAccountName": {
+                                        "type": "string"
+                                    },
+                                    "sources": {
+                                        "items": {
+                                            "description": "SourceSpec --",
+                                            "properties": {
+                                                "compression": {
+                                                    "type": "boolean"
+                                                },
+                                                "content": {
+                                                    "type": "string"
+                                                },
+                                                "contentKey": {
+                                                    "type": "string"
+                                                },
+                                                "contentRef": {
+                                                    "type": "string"
+                                                },
+                                                "interceptors": {
+                                                    "description": "Interceptors are optional identifiers the org.apache.camel.k.RoutesLoader uses to pre/post process sources",
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                },
+                                                "language": {
+                                                    "description": "Language --",
+                                                    "type": "string"
+                                                },
+                                                "loader": {
+                                                    "description": "Loader is an optional id of the org.apache.camel.k.RoutesLoader that will interpret this source at runtime",
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "property-names": {
+                                                    "description": "List of property names defined in the source (e.g. if type is \"template\")",
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                },
+                                                "type": {
+                                                    "description": "Type defines the kind of source described by this object",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "traits": {
+                                        "additionalProperties": {
+                                            "description": "A TraitSpec contains the configuration of a trait",
+                                            "properties": {
+                                                "configuration": {
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "required": [
+                                                "configuration"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "status": {
+                                "description": "IntegrationStatus defines the observed state of Integration",
+                                "properties": {
+                                    "capabilities": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "conditions": {
+                                        "items": {
+                                            "description": "IntegrationCondition describes the state of a resource at a certain point.",
+                                            "properties": {
+                                                "lastTransitionTime": {
+                                                    "description": "Last time the condition transitioned from one status to another.",
+                                                    "format": "date-time",
+                                                    "type": "string"
+                                                },
+                                                "lastUpdateTime": {
+                                                    "description": "The last time this condition was updated.",
+                                                    "format": "date-time",
+                                                    "type": "string"
+                                                },
+                                                "message": {
+                                                    "description": "A human readable message indicating details about the transition.",
+                                                    "type": "string"
+                                                },
+                                                "reason": {
+                                                    "description": "The reason for the condition's last transition.",
+                                                    "type": "string"
+                                                },
+                                                "status": {
+                                                    "description": "Status of the condition, one of True, False, Unknown.",
+                                                    "type": "string"
+                                                },
+                                                "type": {
+                                                    "description": "Type of integration condition.",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "status",
+                                                "type"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "configuration": {
+                                        "items": {
+                                            "description": "ConfigurationSpec --",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "type",
+                                                "value"
+                                            ],
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "dependencies": {
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "digest": {
+                                        "type": "string"
+                                    },
+                                    "failure": {
+                                        "description": "Failure --",
+                                        "properties": {
+                                            "reason": {
+                                                "type": "string"
+                                            },
+                                            "recovery": {
+                                                "description": "FailureRecovery --",
+                                                "properties": {
+                                                    "attempt": {
+                                                        "type": "integer"
+                                                    },
+                                                    "attemptMax": {
+                                                        "type": "integer"
+                                                    },
+                                                    "attemptTime": {
+                                                        "format": "date-time",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "attempt",
+                                                    "attemptMax"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "time": {
+                                                "format": "date-time",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "reason",
+                                            "recovery",
+                                            "time"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "generatedResources": {
+                                        "items": {
+                                            "description": "ResourceSpec --",
+                                            "properties": {
+                                                "compression": {
+                                                    "type": "boolean"
+                                                },
+                                                "content": {
+                                                    "type": "string"
+                                                },
+                                                "contentKey": {
+                                                    "type": "string"
+                                                },
+                                                "contentRef": {
+                                                    "type": "string"
+                                                },
+                                                "mountPath": {
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "type": {
+                                                    "description": "ResourceType --",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "generatedSources": {
+                                        "items": {
+                                            "description": "SourceSpec --",
+                                            "properties": {
+                                                "compression": {
+                                                    "type": "boolean"
+                                                },
+                                                "content": {
+                                                    "type": "string"
+                                                },
+                                                "contentKey": {
+                                                    "type": "string"
+                                                },
+                                                "contentRef": {
+                                                    "type": "string"
+                                                },
+                                                "interceptors": {
+                                                    "description": "Interceptors are optional identifiers the org.apache.camel.k.RoutesLoader uses to pre/post process sources",
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                },
+                                                "language": {
+                                                    "description": "Language --",
+                                                    "type": "string"
+                                                },
+                                                "loader": {
+                                                    "description": "Loader is an optional id of the org.apache.camel.k.RoutesLoader that will interpret this source at runtime",
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "property-names": {
+                                                    "description": "List of property names defined in the source (e.g. if type is \"template\")",
+                                                    "items": {
+                                                        "type": "string"
+                                                    },
+                                                    "type": "array"
+                                                },
+                                                "type": {
+                                                    "description": "Type defines the kind of source described by this object",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "image": {
+                                        "type": "string"
+                                    },
+                                    "kit": {
+                                        "type": "string"
+                                    },
+                                    "phase": {
+                                        "description": "IntegrationPhase --",
+                                        "type": "string"
+                                    },
+                                    "platform": {
+                                        "type": "string"
+                                    },
+                                    "profile": {
+                                        "description": "TraitProfile represents lists of traits that are enabled for the specific installation/integration",
+                                        "type": "string"
+                                    },
+                                    "replicas": {
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "runtimeProvider": {
+                                        "description": "RuntimeProvider --",
+                                        "type": "string"
+                                    },
+                                    "runtimeVersion": {
+                                        "type": "string"
+                                    },
+                                    "selector": {
+                                        "type": "string"
+                                    },
+                                    "version": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "served": true,
+                "storage": true,
+                "subresources": {
+                    "scale": {
+                        "labelSelectorPath": ".status.selector",
+                        "specReplicasPath": ".spec.replicas",
+                        "statusReplicasPath": ".status.replicas"
+                    },
+                    "status": {}
+                }
+            }
+        ]
+    },
+    "status": {
+        "acceptedNames": {
+            "categories": [
+                "kamel",
+                "camel"
+            ],
+            "kind": "Integration",
+            "listKind": "IntegrationList",
+            "plural": "integrations",
+            "shortNames": [
+                "it"
+            ],
+            "singular": "integration"
+        },
+        "conditions": [
+            {
+                "lastTransitionTime": "2021-03-02T13:55:42Z",
+                "message": "no conflicts found",
+                "reason": "NoConflicts",
+                "status": "True",
+                "type": "NamesAccepted"
+            },
+            {
+                "lastTransitionTime": "2021-03-02T13:55:44Z",
+                "message": "the initial names have been accepted",
+                "reason": "InitialNamesAccepted",
+                "status": "True",
+                "type": "Established"
+            }
+        ],
+        "storedVersions": [
+            "v1"
+        ]
+    }
+}

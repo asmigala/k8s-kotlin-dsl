@@ -15,6 +15,18 @@ task generateZookeeper(type: JavaExec, dependsOn: classes) {
     args "zookeeper", "${project(":DSLs:zookeeper:model").projectDir}/src/main/resources/schema.json"
 }
 
+task generateSyndesis(type: JavaExec, dependsOn: classes) {
+    main = "com.fkorotkov.kubernetes.GeneratorKt"
+    classpath = sourceSets.main.runtimeClasspath
+    args "syndesis", "${project(":DSLs:syndesis:model").projectDir}/src/main/resources"
+}
+
+task generateIntegrations(type: JavaExec, dependsOn: classes) {
+    main = "com.fkorotkov.kubernetes.GeneratorKt"
+    classpath = sourceSets.main.runtimeClasspath
+    args "/home/asmigala/tmp/camel-k-crds", "${project(":DSLs:camel-k:model").projectDir}/src/main/resources/schemas"
+}
+
 dependencies {
     compile project(":generator")
 

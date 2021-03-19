@@ -1,0 +1,572 @@
+{
+  "id": "http://fabric8.io/fabric8/v2/Schema#",
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "definitions": {
+    "Build": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.Build",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "baseImage": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "buildStrategy": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "httpProxySecret": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "kanikoBuildCache": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        },
+        "maven": {
+          "type": "ref",
+          "$ref": "#/definitions/Maven",
+          "javaType": "org.apache.camel.k8s.api.v1.Maven"
+        },
+        "persistentVolumeClaim": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "properties": {
+          "type": "ref",
+          "$ref": "#/definitions/Properties",
+          "javaType": "org.apache.camel.k8s.api.v1.Properties"
+        },
+        "publishStrategy": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "registry": {
+          "type": "ref",
+          "$ref": "#/definitions/Registry",
+          "javaType": "org.apache.camel.k8s.api.v1.Registry"
+        },
+        "runtimeProvider": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "runtimeVersion": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "timeout": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Condition": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.Condition",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "lastTransitionTime": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "lastUpdateTime": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "message": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "reason": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "status": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "type": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "ConfigMapKeyRef": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.ConfigMapKeyRef",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "name": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "optional": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Configuration": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.Configuration",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "value": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "IntegrationPlatform": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.IntegrationPlatform",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource",
+        "io.fabric8.kubernetes.api.model.HasMetadata"
+      ],
+      "properties": {
+        "apiVersion": {
+          "type": "string",
+          "description": "",
+          "default": "camel.apache.org/v1",
+          "required": false
+        },
+        "kind": {
+          "type": "string",
+          "description": "",
+          "default": "IntegrationPlatform",
+          "required": false
+        },
+        "metadata": {
+          "type": "object",
+          "description": "",
+          "existingJavaType": "io.fabric8.kubernetes.api.model.ObjectMeta"
+        },
+        "spec": {
+          "type": "ref",
+          "$ref": "#/definitions/Spec",
+          "javaType": "org.apache.camel.k8s.api.v1.Spec"
+        },
+        "status": {
+          "type": "ref",
+          "$ref": "#/definitions/Status",
+          "javaType": "org.apache.camel.k8s.api.v1.Status"
+        }
+      }
+    },
+    "IntegrationPlatformList": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.IntegrationPlatformList",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource",
+        "io.fabric8.kubernetes.api.model.KubernetesResourceList\u003cIntegrationPlatform\u003e"
+      ],
+      "properties": {
+        "apiVersion": {
+          "type": "string",
+          "description": "",
+          "default": "camel.apache.org/v1",
+          "required": false
+        },
+        "items": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/IntegrationPlatform",
+            "javaType": "org.apache.camel.k8s.api.v1.IntegrationPlatform"
+          }
+        },
+        "kind": {
+          "type": "string",
+          "description": "",
+          "default": "IntegrationPlatformList",
+          "required": false
+        },
+        "metadata": {
+          "type": "object",
+          "description": "",
+          "existingJavaType": "io.fabric8.kubernetes.api.model.ListMeta"
+        }
+      }
+    },
+    "Maven": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.Maven",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "localRepository": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "settings": {
+          "type": "ref",
+          "$ref": "#/definitions/Settings",
+          "javaType": "org.apache.camel.k8s.api.v1.Settings"
+        },
+        "timeout": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Properties": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.Properties",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {}
+    },
+    "Registry": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.Registry",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "ca": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "insecure": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        },
+        "organization": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "secret": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Resources": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.Resources",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {}
+    },
+    "SecretKeyRef": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.SecretKeyRef",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "name": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "optional": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Settings": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.Settings",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "configMapKeyRef": {
+          "type": "ref",
+          "$ref": "#/definitions/ConfigMapKeyRef",
+          "javaType": "org.apache.camel.k8s.api.v1.ConfigMapKeyRef"
+        },
+        "secretKeyRef": {
+          "type": "ref",
+          "$ref": "#/definitions/SecretKeyRef",
+          "javaType": "org.apache.camel.k8s.api.v1.SecretKeyRef"
+        }
+      }
+    },
+    "Spec": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.Spec",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "build": {
+          "type": "ref",
+          "$ref": "#/definitions/Build",
+          "javaType": "org.apache.camel.k8s.api.v1.Build"
+        },
+        "cluster": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "configuration": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/Configuration",
+            "javaType": "org.apache.camel.k8s.api.v1.Configuration"
+          }
+        },
+        "profile": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "resources": {
+          "type": "ref",
+          "$ref": "#/definitions/Resources",
+          "javaType": "org.apache.camel.k8s.api.v1.Resources"
+        },
+        "traits": {
+          "type": "ref",
+          "$ref": "#/definitions/Traits",
+          "javaType": "org.apache.camel.k8s.api.v1.Traits"
+        }
+      }
+    },
+    "Status": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.Status",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "build": {
+          "type": "ref",
+          "$ref": "#/definitions/Build",
+          "javaType": "org.apache.camel.k8s.api.v1.Build"
+        },
+        "cluster": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "conditions": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/Condition",
+            "javaType": "org.apache.camel.k8s.api.v1.Condition"
+          }
+        },
+        "configuration": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/Configuration",
+            "javaType": "org.apache.camel.k8s.api.v1.Configuration"
+          }
+        },
+        "phase": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "profile": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "resources": {
+          "type": "ref",
+          "$ref": "#/definitions/Resources",
+          "javaType": "org.apache.camel.k8s.api.v1.Resources"
+        },
+        "traits": {
+          "type": "ref",
+          "$ref": "#/definitions/Traits",
+          "javaType": "org.apache.camel.k8s.api.v1.Traits"
+        },
+        "version": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Traits": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "org.apache.camel.k8s.api.v1.Traits",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {}
+    }
+  },
+  "properties": {
+    "build": {
+      "type": "ref",
+      "$ref": "#/definitions/Build",
+      "javaType": "org.apache.camel.k8s.api.v1.Build"
+    },
+    "condition": {
+      "type": "ref",
+      "$ref": "#/definitions/Condition",
+      "javaType": "org.apache.camel.k8s.api.v1.Condition"
+    },
+    "configMapKeyRef": {
+      "type": "ref",
+      "$ref": "#/definitions/ConfigMapKeyRef",
+      "javaType": "org.apache.camel.k8s.api.v1.ConfigMapKeyRef"
+    },
+    "configuration": {
+      "type": "ref",
+      "$ref": "#/definitions/Configuration",
+      "javaType": "org.apache.camel.k8s.api.v1.Configuration"
+    },
+    "integrationPlatform": {
+      "type": "ref",
+      "$ref": "#/definitions/IntegrationPlatform",
+      "javaType": "org.apache.camel.k8s.api.v1.IntegrationPlatform"
+    },
+    "integrationPlatformList": {
+      "type": "ref",
+      "$ref": "#/definitions/IntegrationPlatformList",
+      "javaType": "org.apache.camel.k8s.api.v1.IntegrationPlatformList"
+    },
+    "maven": {
+      "type": "ref",
+      "$ref": "#/definitions/Maven",
+      "javaType": "org.apache.camel.k8s.api.v1.Maven"
+    },
+    "properties": {
+      "type": "ref",
+      "$ref": "#/definitions/Properties",
+      "javaType": "org.apache.camel.k8s.api.v1.Properties"
+    },
+    "registry": {
+      "type": "ref",
+      "$ref": "#/definitions/Registry",
+      "javaType": "org.apache.camel.k8s.api.v1.Registry"
+    },
+    "resources": {
+      "type": "ref",
+      "$ref": "#/definitions/Resources",
+      "javaType": "org.apache.camel.k8s.api.v1.Resources"
+    },
+    "secretKeyRef": {
+      "type": "ref",
+      "$ref": "#/definitions/SecretKeyRef",
+      "javaType": "org.apache.camel.k8s.api.v1.SecretKeyRef"
+    },
+    "settings": {
+      "type": "ref",
+      "$ref": "#/definitions/Settings",
+      "javaType": "org.apache.camel.k8s.api.v1.Settings"
+    },
+    "spec": {
+      "type": "ref",
+      "$ref": "#/definitions/Spec",
+      "javaType": "org.apache.camel.k8s.api.v1.Spec"
+    },
+    "status": {
+      "type": "ref",
+      "$ref": "#/definitions/Status",
+      "javaType": "org.apache.camel.k8s.api.v1.Status"
+    },
+    "traits": {
+      "type": "ref",
+      "$ref": "#/definitions/Traits",
+      "javaType": "org.apache.camel.k8s.api.v1.Traits"
+    }
+  }
+}

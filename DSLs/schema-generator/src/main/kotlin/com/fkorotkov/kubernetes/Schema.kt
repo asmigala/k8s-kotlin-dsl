@@ -65,3 +65,8 @@ class RefPropertyDefinition : PropertyDefinition() {
   var ref: String = ""
   var javaType: String = ""
 }
+
+class AnyPropertyDefinition : PropertyDefinition() {
+  var description: String = ""
+  var required: Boolean = false
+}

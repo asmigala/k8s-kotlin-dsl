@@ -23,9 +23,8 @@ class CRDDefinition {
 
 class CRDDefinitionSpec {
   lateinit var group: String
-  lateinit var version: String
   lateinit var names: CRDDefinitionNames
-  lateinit var validation: CRDDefinitionValidation
+  lateinit var versions: List<CRDDefinitionVersion>
 }
 
 class CRDDefinitionNames {
@@ -36,6 +35,15 @@ class CRDDefinitionNames {
 }
 
 class CRDDefinitionValidation {
+  lateinit var openAPIV3Schema: OpenAPIV3Schema
+}
+
+class CRDDefinitionVersion {
+  lateinit var name: String
+  lateinit var schema: CRDDefinitionSchema
+}
+
+class CRDDefinitionSchema {
   lateinit var openAPIV3Schema: OpenAPIV3Schema
 }
 

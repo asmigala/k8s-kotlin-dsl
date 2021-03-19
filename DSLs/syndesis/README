@@ -1,0 +1,6 @@
+1. downloaded syndesis crd from repo (not from openshift, we need openapi schema to be included)
+2. fix the generator code to make use of `versions` (already done)
+3. add `generateSyndesis` (already done)
+4. ./gradlew :DSLs:schema-generator:generateSyndesis
+5. ./gradlew :DSLs:syndesis:generator:run
+6. might need to create directories and build.gradle files along the way, just copy what's in zookeeper

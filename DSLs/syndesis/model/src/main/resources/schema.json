@@ -1,0 +1,1373 @@
+{
+  "id": "http://fabric8.io/fabric8/v2/Schema#",
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "definitions": {
+    "Addons": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Addons",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "jaeger": {
+          "type": "ref",
+          "$ref": "#/definitions/Jaeger",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Jaeger"
+        },
+        "knative": {
+          "type": "ref",
+          "$ref": "#/definitions/Knative",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Knative"
+        },
+        "ops": {
+          "type": "ref",
+          "$ref": "#/definitions/Ops",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Ops"
+        },
+        "publicApi": {
+          "type": "ref",
+          "$ref": "#/definitions/PublicApi",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.PublicApi"
+        },
+        "todo": {
+          "type": "ref",
+          "$ref": "#/definitions/Todo",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Todo"
+        }
+      }
+    },
+    "Affinity": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Affinity",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "nodeAffinity": {
+          "type": "ref",
+          "$ref": "#/definitions/NodeAffinity",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.NodeAffinity"
+        },
+        "podAffinity": {
+          "type": "ref",
+          "$ref": "#/definitions/PodAffinity",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.PodAffinity"
+        },
+        "podAntiAffinity": {
+          "type": "ref",
+          "$ref": "#/definitions/PodAntiAffinity",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.PodAntiAffinity"
+        }
+      }
+    },
+    "Backup": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Backup",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "schedule": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Components": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Components",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "database": {
+          "type": "ref",
+          "$ref": "#/definitions/Database",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Database"
+        },
+        "grafana": {
+          "type": "ref",
+          "$ref": "#/definitions/Grafana",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Grafana"
+        },
+        "meta": {
+          "type": "ref",
+          "$ref": "#/definitions/Meta",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Meta"
+        },
+        "oauth": {
+          "type": "ref",
+          "$ref": "#/definitions/Oauth",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Oauth"
+        },
+        "prometheus": {
+          "type": "ref",
+          "$ref": "#/definitions/Prometheus",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Prometheus"
+        },
+        "server": {
+          "type": "ref",
+          "$ref": "#/definitions/Server",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Server"
+        },
+        "upgrade": {
+          "type": "ref",
+          "$ref": "#/definitions/Upgrade",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Upgrade"
+        }
+      }
+    },
+    "ConnectionPool": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.ConnectionPool",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "connectionTimeout": {
+          "type": "integer",
+          "description": "",
+          "required": false
+        },
+        "idleTimeout": {
+          "type": "integer",
+          "description": "",
+          "required": false
+        },
+        "leakDetectionThreshold": {
+          "type": "integer",
+          "description": "",
+          "required": false
+        },
+        "maxLifetime": {
+          "type": "integer",
+          "description": "",
+          "required": false
+        },
+        "maximumPoolSize": {
+          "type": "integer",
+          "description": "",
+          "required": false
+        },
+        "minimumIdle": {
+          "type": "integer",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Database": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Database",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "externalDbURL": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "name": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "resources": {
+          "type": "ref",
+          "$ref": "#/definitions/Resources",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Resources"
+        },
+        "url": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "user": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Features": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Features",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "deployIntegrations": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        },
+        "integrationLimit": {
+          "type": "integer",
+          "description": "",
+          "required": false
+        },
+        "integrationStateCheckInterval": {
+          "type": "integer",
+          "description": "",
+          "required": false
+        },
+        "managementUrlFor3scale": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "maven": {
+          "type": "ref",
+          "$ref": "#/definitions/Maven",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Maven"
+        }
+      }
+    },
+    "Grafana": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Grafana",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "resources": {
+          "type": "ref",
+          "$ref": "#/definitions/Resources",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Resources"
+        }
+      }
+    },
+    "InfraScheduling": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.InfraScheduling",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "affinity": {
+          "type": "ref",
+          "$ref": "#/definitions/Affinity",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Affinity"
+        },
+        "tolerations": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/Toleration",
+            "javaType": "com.fkorotkov.kubernetes.syndesis.Toleration"
+          }
+        }
+      }
+    },
+    "IntegrationScheduling": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.IntegrationScheduling",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "affinity": {
+          "type": "ref",
+          "$ref": "#/definitions/Affinity",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Affinity"
+        },
+        "tolerations": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/Toleration",
+            "javaType": "com.fkorotkov.kubernetes.syndesis.Toleration"
+          }
+        }
+      }
+    },
+    "Jaeger": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Jaeger",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "clientOnly": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        },
+        "collectorUri": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        },
+        "imageAgent": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "imageAllInOne": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "imageOperator": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "operatorOnly": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        },
+        "queryUri": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "samplerParam": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "samplerType": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Knative": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Knative",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Limit": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Limit",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "cpu": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "memory": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "MatchExpression": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.MatchExpression",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "operator": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "values": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "string",
+            "description": "",
+            "required": false
+          }
+        }
+      }
+    },
+    "MatchField": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.MatchField",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "operator": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "values": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "string",
+            "description": "",
+            "required": false
+          }
+        }
+      }
+    },
+    "Maven": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Maven",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "additionalArguments": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "append": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        },
+        "repositories": {
+          "type": "ref",
+          "$ref": "#/definitions/Repositories",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Repositories"
+        }
+      }
+    },
+    "Meta": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Meta",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "javaOptions": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "resources": {
+          "type": "ref",
+          "$ref": "#/definitions/Resources",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Resources"
+        }
+      }
+    },
+    "NodeAffinity": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.NodeAffinity",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "preferredDuringSchedulingIgnoredDuringExecution": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/PreferredDuringSchedulingIgnoredDuringExecution",
+            "javaType": "com.fkorotkov.kubernetes.syndesis.PreferredDuringSchedulingIgnoredDuringExecution"
+          }
+        },
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+          "type": "ref",
+          "$ref": "#/definitions/RequiredDuringSchedulingIgnoredDuringExecution",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.RequiredDuringSchedulingIgnoredDuringExecution"
+        }
+      }
+    },
+    "NodeSelectorTerm": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.NodeSelectorTerm",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "matchExpressions": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/MatchExpression",
+            "javaType": "com.fkorotkov.kubernetes.syndesis.MatchExpression"
+          }
+        },
+        "matchFields": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/MatchField",
+            "javaType": "com.fkorotkov.kubernetes.syndesis.MatchField"
+          }
+        }
+      }
+    },
+    "Oauth": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Oauth",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "credentialsSecret": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "cryptoCommsSecret": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "disableSarCheck": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        },
+        "sarNamespace": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Ops": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Ops",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "PodAffinity": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.PodAffinity",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "preferredDuringSchedulingIgnoredDuringExecution": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/PreferredDuringSchedulingIgnoredDuringExecution",
+            "javaType": "com.fkorotkov.kubernetes.syndesis.PreferredDuringSchedulingIgnoredDuringExecution"
+          }
+        },
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/RequiredDuringSchedulingIgnoredDuringExecution",
+            "javaType": "com.fkorotkov.kubernetes.syndesis.RequiredDuringSchedulingIgnoredDuringExecution"
+          }
+        }
+      }
+    },
+    "PodAntiAffinity": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.PodAntiAffinity",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "preferredDuringSchedulingIgnoredDuringExecution": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/PreferredDuringSchedulingIgnoredDuringExecution",
+            "javaType": "com.fkorotkov.kubernetes.syndesis.PreferredDuringSchedulingIgnoredDuringExecution"
+          }
+        },
+        "requiredDuringSchedulingIgnoredDuringExecution": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/RequiredDuringSchedulingIgnoredDuringExecution",
+            "javaType": "com.fkorotkov.kubernetes.syndesis.RequiredDuringSchedulingIgnoredDuringExecution"
+          }
+        }
+      }
+    },
+    "Preference": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Preference",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "matchExpressions": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/MatchExpression",
+            "javaType": "com.fkorotkov.kubernetes.syndesis.MatchExpression"
+          }
+        },
+        "matchFields": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/MatchField",
+            "javaType": "com.fkorotkov.kubernetes.syndesis.MatchField"
+          }
+        }
+      }
+    },
+    "PreferredDuringSchedulingIgnoredDuringExecution": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.PreferredDuringSchedulingIgnoredDuringExecution",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "preference": {
+          "type": "ref",
+          "$ref": "#/definitions/Preference",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Preference"
+        },
+        "weight": {
+          "type": "integer",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Prometheus": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Prometheus",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "resources": {
+          "type": "ref",
+          "$ref": "#/definitions/Resources",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Resources"
+        }
+      }
+    },
+    "PublicApi": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.PublicApi",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "disable-sar-check": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        },
+        "routeHostname": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Repositories": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Repositories",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {}
+    },
+    "Request": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Request",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "cpu": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "memory": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "RequiredDuringSchedulingIgnoredDuringExecution": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.RequiredDuringSchedulingIgnoredDuringExecution",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "nodeSelectorTerms": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/NodeSelectorTerm",
+            "javaType": "com.fkorotkov.kubernetes.syndesis.NodeSelectorTerm"
+          }
+        }
+      }
+    },
+    "Resources": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Resources",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "limit": {
+          "type": "ref",
+          "$ref": "#/definitions/Limit",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Limit"
+        },
+        "request": {
+          "type": "ref",
+          "$ref": "#/definitions/Request",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Request"
+        },
+        "volumeAccessMode": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "volumeCapacity": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "volumeLabels": {
+          "type": "ref",
+          "$ref": "#/definitions/VolumeLabels",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.VolumeLabels"
+        },
+        "volumeName": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "volumeStorageClass": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Server": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Server",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "connectionPool": {
+          "type": "ref",
+          "$ref": "#/definitions/ConnectionPool",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.ConnectionPool"
+        },
+        "features": {
+          "type": "ref",
+          "$ref": "#/definitions/Features",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Features"
+        },
+        "javaOptions": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "resources": {
+          "type": "ref",
+          "$ref": "#/definitions/Resources",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Resources"
+        }
+      }
+    },
+    "Spec": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Spec",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "addons": {
+          "type": "ref",
+          "$ref": "#/definitions/Addons",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Addons"
+        },
+        "backup": {
+          "type": "ref",
+          "$ref": "#/definitions/Backup",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Backup"
+        },
+        "components": {
+          "type": "ref",
+          "$ref": "#/definitions/Components",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Components"
+        },
+        "demoData": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        },
+        "forceMigration": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        },
+        "infraScheduling": {
+          "type": "ref",
+          "$ref": "#/definitions/InfraScheduling",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.InfraScheduling"
+        },
+        "integrationScheduling": {
+          "type": "ref",
+          "$ref": "#/definitions/IntegrationScheduling",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.IntegrationScheduling"
+        },
+        "routeHostname": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Status": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Status",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "backup": {
+          "type": "ref",
+          "$ref": "#/definitions/Backup",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Backup"
+        },
+        "description": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "forceUpgrade": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        },
+        "lastUpgradeFailure": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "phase": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "reason": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "targetVersion": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "upgradeAttempts": {
+          "type": "integer",
+          "description": "",
+          "required": false
+        },
+        "version": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Syndesis": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Syndesis",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource",
+        "io.fabric8.kubernetes.api.model.HasMetadata"
+      ],
+      "properties": {
+        "apiVersion": {
+          "type": "string",
+          "description": "",
+          "default": "syndesis.io/v1beta2",
+          "required": false
+        },
+        "kind": {
+          "type": "string",
+          "description": "",
+          "default": "Syndesis",
+          "required": false
+        },
+        "metadata": {
+          "type": "object",
+          "description": "",
+          "existingJavaType": "io.fabric8.kubernetes.api.model.ObjectMeta"
+        },
+        "spec": {
+          "type": "ref",
+          "$ref": "#/definitions/Spec",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Spec"
+        },
+        "status": {
+          "type": "ref",
+          "$ref": "#/definitions/Status",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Status"
+        }
+      }
+    },
+    "SyndesisList": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.SyndesisList",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource",
+        "io.fabric8.kubernetes.api.model.KubernetesResourceList\u003cSyndesis\u003e"
+      ],
+      "properties": {
+        "apiVersion": {
+          "type": "string",
+          "description": "",
+          "default": "syndesis.io/v1beta2",
+          "required": false
+        },
+        "items": {
+          "type": "array",
+          "description": "",
+          "required": false,
+          "items": {
+            "type": "ref",
+            "$ref": "#/definitions/Syndesis",
+            "javaType": "com.fkorotkov.kubernetes.syndesis.Syndesis"
+          }
+        },
+        "kind": {
+          "type": "string",
+          "description": "",
+          "default": "SyndesisList",
+          "required": false
+        },
+        "metadata": {
+          "type": "object",
+          "description": "",
+          "existingJavaType": "io.fabric8.kubernetes.api.model.ListMeta"
+        }
+      }
+    },
+    "Todo": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Todo",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Toleration": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Toleration",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "effect": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "key": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "operator": {
+          "type": "string",
+          "description": "",
+          "required": false
+        },
+        "tolerationSeconds": {
+          "type": "integer",
+          "description": "",
+          "required": false
+        },
+        "value": {
+          "type": "string",
+          "description": "",
+          "required": false
+        }
+      }
+    },
+    "Upgrade": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Upgrade",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {
+        "resources": {
+          "type": "ref",
+          "$ref": "#/definitions/Resources",
+          "javaType": "com.fkorotkov.kubernetes.syndesis.Resources"
+        }
+      }
+    },
+    "VolumeLabels": {
+      "type": "object",
+      "description": "",
+      "additionalProperties": true,
+      "javaType": "com.fkorotkov.kubernetes.syndesis.VolumeLabels",
+      "javaInterfaces": [
+        "io.fabric8.kubernetes.api.model.KubernetesResource"
+      ],
+      "properties": {}
+    }
+  },
+  "properties": {
+    "addons": {
+      "type": "ref",
+      "$ref": "#/definitions/Addons",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Addons"
+    },
+    "affinity": {
+      "type": "ref",
+      "$ref": "#/definitions/Affinity",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Affinity"
+    },
+    "backup": {
+      "type": "ref",
+      "$ref": "#/definitions/Backup",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Backup"
+    },
+    "components": {
+      "type": "ref",
+      "$ref": "#/definitions/Components",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Components"
+    },
+    "connectionPool": {
+      "type": "ref",
+      "$ref": "#/definitions/ConnectionPool",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.ConnectionPool"
+    },
+    "database": {
+      "type": "ref",
+      "$ref": "#/definitions/Database",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Database"
+    },
+    "features": {
+      "type": "ref",
+      "$ref": "#/definitions/Features",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Features"
+    },
+    "grafana": {
+      "type": "ref",
+      "$ref": "#/definitions/Grafana",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Grafana"
+    },
+    "infraScheduling": {
+      "type": "ref",
+      "$ref": "#/definitions/InfraScheduling",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.InfraScheduling"
+    },
+    "integrationScheduling": {
+      "type": "ref",
+      "$ref": "#/definitions/IntegrationScheduling",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.IntegrationScheduling"
+    },
+    "jaeger": {
+      "type": "ref",
+      "$ref": "#/definitions/Jaeger",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Jaeger"
+    },
+    "knative": {
+      "type": "ref",
+      "$ref": "#/definitions/Knative",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Knative"
+    },
+    "limit": {
+      "type": "ref",
+      "$ref": "#/definitions/Limit",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Limit"
+    },
+    "matchExpression": {
+      "type": "ref",
+      "$ref": "#/definitions/MatchExpression",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.MatchExpression"
+    },
+    "matchField": {
+      "type": "ref",
+      "$ref": "#/definitions/MatchField",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.MatchField"
+    },
+    "maven": {
+      "type": "ref",
+      "$ref": "#/definitions/Maven",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Maven"
+    },
+    "meta": {
+      "type": "ref",
+      "$ref": "#/definitions/Meta",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Meta"
+    },
+    "nodeAffinity": {
+      "type": "ref",
+      "$ref": "#/definitions/NodeAffinity",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.NodeAffinity"
+    },
+    "nodeSelectorTerm": {
+      "type": "ref",
+      "$ref": "#/definitions/NodeSelectorTerm",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.NodeSelectorTerm"
+    },
+    "oauth": {
+      "type": "ref",
+      "$ref": "#/definitions/Oauth",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Oauth"
+    },
+    "ops": {
+      "type": "ref",
+      "$ref": "#/definitions/Ops",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Ops"
+    },
+    "podAffinity": {
+      "type": "ref",
+      "$ref": "#/definitions/PodAffinity",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.PodAffinity"
+    },
+    "podAntiAffinity": {
+      "type": "ref",
+      "$ref": "#/definitions/PodAntiAffinity",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.PodAntiAffinity"
+    },
+    "preference": {
+      "type": "ref",
+      "$ref": "#/definitions/Preference",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Preference"
+    },
+    "preferredDuringSchedulingIgnoredDuringExecution": {
+      "type": "ref",
+      "$ref": "#/definitions/PreferredDuringSchedulingIgnoredDuringExecution",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.PreferredDuringSchedulingIgnoredDuringExecution"
+    },
+    "prometheus": {
+      "type": "ref",
+      "$ref": "#/definitions/Prometheus",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Prometheus"
+    },
+    "publicApi": {
+      "type": "ref",
+      "$ref": "#/definitions/PublicApi",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.PublicApi"
+    },
+    "repositories": {
+      "type": "ref",
+      "$ref": "#/definitions/Repositories",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Repositories"
+    },
+    "request": {
+      "type": "ref",
+      "$ref": "#/definitions/Request",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Request"
+    },
+    "requiredDuringSchedulingIgnoredDuringExecution": {
+      "type": "ref",
+      "$ref": "#/definitions/RequiredDuringSchedulingIgnoredDuringExecution",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.RequiredDuringSchedulingIgnoredDuringExecution"
+    },
+    "resources": {
+      "type": "ref",
+      "$ref": "#/definitions/Resources",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Resources"
+    },
+    "server": {
+      "type": "ref",
+      "$ref": "#/definitions/Server",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Server"
+    },
+    "spec": {
+      "type": "ref",
+      "$ref": "#/definitions/Spec",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Spec"
+    },
+    "status": {
+      "type": "ref",
+      "$ref": "#/definitions/Status",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Status"
+    },
+    "syndesis": {
+      "type": "ref",
+      "$ref": "#/definitions/Syndesis",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Syndesis"
+    },
+    "syndesisList": {
+      "type": "ref",
+      "$ref": "#/definitions/SyndesisList",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.SyndesisList"
+    },
+    "todo": {
+      "type": "ref",
+      "$ref": "#/definitions/Todo",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Todo"
+    },
+    "toleration": {
+      "type": "ref",
+      "$ref": "#/definitions/Toleration",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Toleration"
+    },
+    "upgrade": {
+      "type": "ref",
+      "$ref": "#/definitions/Upgrade",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.Upgrade"
+    },
+    "volumeLabels": {
+      "type": "ref",
+      "$ref": "#/definitions/VolumeLabels",
+      "javaType": "com.fkorotkov.kubernetes.syndesis.VolumeLabels"
+    }
+  }
+}
